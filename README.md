@@ -20,7 +20,7 @@
 <div align="center">
   <!-- 替换为你的真实截图 -->
   <img src="https://raw.githubusercontent.com/heese0524/laravel-project/main/screenshoots/home-page.png" width="800" alt="半刻界面预览：浅米色稿纸风格 + Markdown 编辑器">
-  <img src="https://raw.githubusercontent.com/heese0524/laravel-project/main/screenshoots/profile-page.png" width="800" alt="半刻界面预览：浅米色稿纸风格 + Markdown 编辑器">
+  <!-- <img src="https://raw.githubusercontent.com/heese0524/laravel-project/main/screenshoots/profile-page.png" width="800" alt="半刻界面预览：浅米色稿纸风格 + Markdown 编辑器"> -->
 </div>
 
 ---
