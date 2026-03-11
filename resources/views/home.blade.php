@@ -411,14 +411,14 @@
                 <label class="block text-brown-800 mb-2 font-medium">邮箱地址</label>
                 <input type="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-3 border border-brown-100 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-white" placeholder="you@example.com" required>
                 @error('email')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <p class="text-red-500 text-sm mt-1 login-error">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-6">
                 <label class="block text-brown-800 mb-2 font-medium">密码</label>
-                <input type="password" name="password" class="w-full px-4 py-3 border border-brown-100 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-white" placeholder="••••••••" required>
+                <input type="password" name="password" class="w-full px-4 py-3 border border-brown-100 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-white" placeholder="请输入至少 8 位字符 " required>
                 @error('password')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <p class="text-red-500 text-sm mt-1 login-error">{{ $message }}</p>
                 @enderror
             </div>
             <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-[#b89a55] transition">登录</button>
@@ -428,7 +428,6 @@
         </div>
     </div>
 </div>
-
 <div id="register-modal" class="modal">
     <div class="overlay" onclick="hideModal()"></div>
     <div class="modal-content">
@@ -439,28 +438,28 @@
                 <label class="block text-brown-800 mb-2 font-medium">用户名</label>
                 <input type="text" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 border border-brown-100 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-white" placeholder="yourname" required>
                 @error('name')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <p class="text-red-500 text-sm mt-1 register-error">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-4">
                 <label class="block text-brown-800 mb-2 font-medium">邮箱地址</label>
                 <input type="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-3 border border-brown-100 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-white" placeholder="you@example.com" required>
                 @error('email')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <p class="text-red-500 text-sm mt-1 register-error">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-4">
                 <label class="block text-brown-800 mb-2 font-medium">密码</label>
-                <input type="password" name="password" class="w-full px-4 py-3 border border-brown-100 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-white" placeholder="至少 8 位字符" required>
+                <input type="password" name="password" class="w-full px-4 py-3 border border-brown-100 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-white" placeholder="请输入至少 8 位字符" required>
                 @error('password')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <p class="text-red-500 text-sm mt-1 register-error">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-6">
                 <label class="block text-brown-800 mb-2 font-medium">确认密码</label>
                 <input type="password" name="password_confirmation" class="w-full px-4 py-3 border border-brown-100 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-white" placeholder="再次输入密码" required>
                 @error('password_confirmation')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <p class="text-red-500 text-sm mt-1 register-error">{{ $message }}</p>
                 @enderror
             </div>
             <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-[#b89a55] transition">注册</button>
@@ -473,6 +472,29 @@
 
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script>
+    // 全局定义弹窗函数
+window.showModal = function(type) {
+    document.querySelectorAll('.modal').forEach(m => m.classList.remove('show'));
+    document.getElementById(type + '-modal')?.classList.add('show');
+};
+
+window.hideModal = function() {
+    document.querySelectorAll('.modal').forEach(m => m.classList.remove('show'));
+};
+
+window.switchModal = function(type) {
+    hideModal();
+    setTimeout(() => showModal(type), 150);
+};
+
+// 👇👇👇 新增：自动显示带错误的弹窗 👇👇👇
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.querySelector('.login-error')) {
+        showModal('login');
+    } else if (document.querySelector('.register-error')) {
+        showModal('register');
+    }
+}); 
 // 全局定义弹窗函数
 window.showModal = function(type) {
     document.querySelectorAll('.modal').forEach(m => m.classList.remove('show'));

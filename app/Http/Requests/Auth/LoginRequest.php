@@ -41,7 +41,7 @@ class LoginRequest extends FormRequest
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                'email' => '邮箱或密码不正确',
             ]);
         }
 
@@ -62,9 +62,7 @@ class LoginRequest extends FormRequest
         $seconds = RateLimiter::availableIn($this->throttleKey());
 
         throw ValidationException::withMessages([
-            'email' => trans('auth.throttle', [
-                'seconds' => $seconds,
-            ]),
+            'email' => "登录尝试次数过多，请 {$seconds} 秒后再试。",
         ]);
     }
 
@@ -73,6 +71,15 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->input('email')).'|'.$this->ip());
+        return Str::transliterate(Str::lower($this->input('email')) . '|' . $this->ip());
+    }
+
+    // 👇👇👇 新增这一段 👇👇👇
+    /**
+     * Get the URL to redirect to on a validation error.
+     */
+    protected function getRedirectUrl()
+    {
+        return url()->previous(); // 重定向回提交表单的页面（比如首页 /）
     }
 }
