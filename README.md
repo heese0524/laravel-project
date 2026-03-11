@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/github/actions/workflow/status/your-username/banke/tests.yml?branch=main&label=tests&color=8B5A3C" alt="Tests">
   </a>
   <a href="https://laravel.com">
-    <img src="https://img.shields.io/badge/Laravel-11.x-F8F4ED?logo=laravel&logoColor=4B3832" alt="Laravel 12">
+    <img src="https://img.shields.io/badge/Laravel-12.x-F8F4ED?logo=laravel&logoColor=4B3832" alt="Laravel 12">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/github/license/your-username/banke?color=A67C52" alt="License">
@@ -19,7 +19,7 @@
 
 <div align="center">
   <!-- 替换为你的真实截图 -->
-  <img src="https://via.placeholder.com/800x500/F8F4ED/4B3832?text=半刻+·+Markdown编辑界面+|+浅米稿纸风格" width="800" alt="半刻界面预览">
+  <img src="https://raw.githubusercontent.com/your-username/banke/main/screenshots/editor.jpg" width="800" alt="半刻界面预览：浅米色稿纸风格 + Markdown 编辑器">
 </div>
 
 ---
@@ -48,7 +48,7 @@
 
 ### 安装步骤
 ```bash
-git clone https://github委/your-username/banke.git
+git clone https://github.com/your-username/banke.git
 cd banke
 
 composer install
