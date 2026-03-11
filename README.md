@@ -1,59 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">半刻 · 写给自己的独白</h1>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <em>每天半刻，留文字给自己。</em><br>
+  一个如旧稿纸般温润的私人写作空间 —— 可私藏，亦可分享。
 </p>
 
-## About Laravel
+<p align="center">
+  <a href="https://github.com/your-username/banke/actions">
+    <img src="https://img.shields.io/github/actions/workflow/status/your-username/banke/tests.yml?branch=main&label=tests&color=8B5A3C" alt="Tests">
+  </a>
+  <a href="https://laravel.com">
+    <img src="https://img.shields.io/badge/Laravel-12.x-F8F4ED?logo=laravel&logoColor=4B3832" alt="Laravel 12">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/github/license/your-username/banke?color=A67C52" alt="License">
+  </a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<div align="center">
+  <!-- 替换为你的真实截图 -->
+  <img src="https://raw.githubusercontent.com/your-username/banke/main/screenshots/editor.jpg" width="800" alt="半刻界面预览：浅米色稿纸风格 + Markdown 编辑器">
+</div>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+> _“有些话，写下来，就不怕忘记了。”_
 
-## Learning Laravel
+「半刻」是一个介于日记与博客之间的写作平台。  
+你可以写下只给自己看的秘密心事，也可以将思考整理成文，分享给世界。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- ✍️ **Markdown 编辑器** —— 用简洁语法，写自由文字  
+- 🔒 **公开 / 私密双模式** —— 一键切换，掌控分享边界  
+- 📜 **旧稿纸视觉设计** —— 浅米背景 + 深棕文字，如执笔于泛黄纸页  
+- 🕊 **无干扰体验** —— 无广告、无点赞、无评论，只有你和文字  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+这里不是流量场，而是你的精神角落。
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🚀 快速启动
 
-### Premium Partners
+### 环境要求
+- PHP 8.2+
+- Composer
+- MySQL / PostgreSQL / SQLite
+- Node.js & npm
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 安装步骤
+```bash
+git clone https://github.com/your-username/banke.git
+cd banke
 
-## Contributing
+composer install
+npm install && npm run build
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+cp .env.example .env
+php artisan key:generate
 
-## Code of Conduct
+# 配置数据库后运行
+php artisan migrate --seed
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+php artisan serve
