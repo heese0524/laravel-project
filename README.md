@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/github/actions/workflow/status/your-username/banke/tests.yml?branch=main&label=tests&color=8B5A3C" alt="Tests">
   </a>
   <a href="https://laravel.com">
-    <img src="https://img.shields.io/badge/Laravel-11.x-F8F4ED?logo=laravel&logoColor=4B3832" alt="Laravel 11">
+    <img src="https://img.shields.io/badge/Laravel-11.x-F8F4ED?logo=laravel&logoColor=4B3832" alt="Laravel 12">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/github/license/your-username/banke?color=A67C52" alt="License">
