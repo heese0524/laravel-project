@@ -50,7 +50,7 @@
 ### 安装步骤
 ```bash
 git clone https://github.com/your-heese0524/laravel-project.git
-cd banke
+cd laravel-project
 
 composer install
 npm install && npm run build
