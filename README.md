@@ -43,13 +43,12 @@
 
 ### 环境要求
 - PHP 8.2+
-- Composer
+- Laravel 12
 - MySQL / PostgreSQL / SQLite
-- Node.js & npm
 
 ### 安装步骤
 ```bash
-git clone https://github.com/your-username/banke.git
+git clone https://github.com/your-heese0524/banke.git
 cd banke
 
 composer install
