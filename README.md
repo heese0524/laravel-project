@@ -45,6 +45,7 @@
 - PHP 8.2+
 - Laravel 12
 - MySQL / PostgreSQL / SQLite
+- Node.js & npm
 
 ### 安装步骤
 ```bash
