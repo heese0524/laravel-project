@@ -11,7 +11,7 @@ class RegisterRequest extends FormRequest
     {
         return true;
     }
-s
+
     public function rules(): array
     {
         return [
@@ -27,24 +27,23 @@ s
             'password' => ['required', 'confirmed', 'min:8'],
         ];
     }
+        public function messages(): array
+        {
+            return [
+                'name.required' => '姓名不能为空',
+                'name.string'   => '姓名必须是字符串',
+                'name.max'      => '姓名不能超过15个字符',
 
-    public function messages(): array
-    {
-        return [
-            'name.required' => '姓名不能为空',
-            'name.string' => '姓名必须是字符串',
-            'name.max' => '姓名不能超过15个字符'
+                'email.required' => '邮箱不能为空',
+                'email.email'    => '请输入有效的邮箱地址',
+                'email.unique'   => '该邮箱已被注册',
+                'email.lowercase'=> '邮箱必须为小写',
 
-            'email.required' => '邮箱不能为空',
-            'email.email' => '请输入有效的邮箱地址',
-            'email.unique' => '该邮箱已被注册',
-            'email.lowercase' => '邮箱必须为小写',
-
-            'password.required' => '密码不能为空',
-            'password.confirmed' => '两次输入的密码不一致',
-            'password.min' => '密码至少需要8位',
-        ];
-    }
+                'password.required'  => '密码不能为空',
+                'password.confirmed' => '两次输入的密码不一致',
+                'password.min'       => '密码至少需要8位',
+            ];
+        }
 
     protected function getRedirectUrl()
     {
